@@ -10,9 +10,9 @@ type Props = {
 function TrendCompany({ companyName, logoUrl, description }: Props) {
   const truncatedDescription = truncate(description, 20);
   return (
-    <div>
-      <div className="py-[11px] border-b border-gray-300/20 w-full flex justify-between items-center ">
-        <div className=" w-full h-full  flex items-center  ">
+    <div className="">
+      <div className="py-[11px] border-b border-gray-300/20 flex  items-center">
+        <div className=" w-full h-full flex items-center">
           <div className=" bg-orange-400  mr-5 min-h-[40px] min-w-[40px] flex justify-center items-center  rounded-lg">
             <Image
               className="p-[2px]"
@@ -24,7 +24,7 @@ function TrendCompany({ companyName, logoUrl, description }: Props) {
             />
           </div>
           <div className="">
-            <p className=" text-gray-900 text-base  ">{companyName}</p>
+            <p className=" text-gray-900 text-base">{companyName}</p>
             <p className="text-gray-300 text-sm ">{truncatedDescription}</p>
           </div>
         </div>

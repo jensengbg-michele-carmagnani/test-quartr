@@ -8,28 +8,32 @@ export interface TrendingCompany {
   liveUrl: string;
   logoLightUrl: string;
   logoDarkUrl: string;
-  iconUrl: string;
+  iconUrl: string | null;
   description: string;
   reportingCurrency: string;
   colorSettings: {
     brandColor: string;
   };
   events: Events[];
-  isins: [];
+  isins: string[];
 }
 
 type Events = {
-  audioUrl: string;
+  audioUrl?: string | null;
   reportUrl: string;
-  pdfUrl: string;
+  pdfUrl: string | null;
   eventId: number;
   eventTitle: string;
   eventDate: string;
-  qnaTimestamp: number;
+  qnaTimestamp: number | null;
   fiscalPeriod: string;
   fiscalYear: string;
 };
 
 export type ErrorMessage = {
   message: string;
+};
+
+export type Data = {
+  data: TrendingCompany[];
 };

@@ -9,9 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="h-screen w-full flex justify-center mx-auto">
-        {children}
-      </body>
+      <body className=" ">{children}</body>
     </html>
   );
 }

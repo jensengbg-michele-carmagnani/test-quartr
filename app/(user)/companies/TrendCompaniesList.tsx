@@ -15,11 +15,17 @@ const fetchTrendingCompanies = async () => {
 
 async function TrendCompaniesList() {
   const companies = await fetchTrendingCompanies();
+  console.log(companies);
   return (
-    <div className="pt-10 px-10 w-screen">
-      <h2 className="text-gray-300">Trending Company</h2>
+    <div className="pt-10 px-10 overflow-y-scroll">
+      <WrapperLink href="/companies">
+        <h2 className="text-gray-300">Trending Company</h2>
+      </WrapperLink>
       {companies.map((company: TrendingCompany) => (
-        <WrapperLink href={`companies/${company.companyId.toString()}`}>
+        <WrapperLink
+          key={company.companyId}
+          href={`companies/${company.companyId.toString()}`}
+        >
           <TrendCompany
             companyName={company.companyName}
             logoUrl={company.logoLightUrl}
